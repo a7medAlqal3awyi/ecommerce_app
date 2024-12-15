@@ -18,6 +18,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   #A wrapper around InheritedWidget to make them easier to use and more reusable.
   provider: ^6.1.2
+  lottie: ^3.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -34,6 +35,9 @@ flutter:
     - assets/images/women fashion/
     - assets/images/men fashion/
     - assets/images/jewelry/
+    - assets/images/profile3.jpg
+    - assets/animation/
+
 
 
 

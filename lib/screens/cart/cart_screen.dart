@@ -1,10 +1,12 @@
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/helper/spacing.dart';
 import 'package:e_commerce/provider/cart_provider.dart';
-import 'package:e_commerce/screens/cart/widget/cart_app_bar.dart';
 import 'package:e_commerce/screens/cart/widget/check_out.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
+
+import '../../core/widgets/general_app_bar.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -33,12 +35,17 @@ class _CartScreenState extends State<CartScreen> {
         );
     return Scaffold(
       backgroundColor: kcontentColor,
-      bottomSheet: CheckOutBox(),
+      bottomSheet: provider.cart.isEmpty ? SizedBox.shrink(): CheckOutBox(),
       body: SafeArea(
         child: Column(
           children: [
             verticalSpacing(10),
-            const CartAppBar(),
+             GeneralAppBar(
+               title: "My Cart",
+            ),
+            provider.cart.isEmpty ?
+            Center(child: Lottie.asset("assets/animation/animat1.json"))
+                :
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,

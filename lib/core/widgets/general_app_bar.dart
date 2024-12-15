@@ -4,8 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/helper/spacing.dart';
 
-class CartAppBar extends StatelessWidget {
-  const CartAppBar({super.key});
+class GeneralAppBar extends StatelessWidget {
+  final String title;
+  const GeneralAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class CartAppBar extends StatelessWidget {
           ),
           horizontalSpacing(90),
           Text(
-            "My Cart",
+            title,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20.sp,
